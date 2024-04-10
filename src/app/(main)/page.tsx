@@ -1,5 +1,6 @@
 import Greetings from "@/components/main/Greetings";
 import Input from "@/components/main/Input";
+import TrainCard from "@/components/main/TrainCard";
 import TrainIcons from "@/components/main/TrainIcons";
 import Image from "next/image";
 
@@ -32,7 +33,9 @@ export default function Home() {
           {trainIcons.map((trainIcon) => (
             <TrainIcons name={trainIcon.name} color={trainIcon.color} />
           ))}
-          
+        </div>
+        <div>
+            <TrainCard/>
         </div>
       </div>
     </section>

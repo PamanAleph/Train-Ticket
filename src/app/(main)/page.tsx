@@ -34,7 +34,7 @@ export default function Home() {
             <TrainIcons name={trainIcon.name} color={trainIcon.color} />
           ))}
         </div>
-        <div>
+        <div className="">
             <TrainCard/>
         </div>
       </div>

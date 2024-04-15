@@ -4,26 +4,26 @@ import Separator from "../ui/Separator";
 function TrainCard() {
     return (
         <section>
-            <article className="w-[500px] bg-white rounded-2xl p-2 shadow-lg">
-                <header className="flex flex-col-2 justify-between p-3">
+            <article className="w-full bg-white rounded-2xl p-2 shadow-lg">
+                <header className="flex flex-col-2 justify-between p-3 text-[#2D9CDB] text-[9px] text-xl font-[700]">
                     <h1>Departure</h1>
                     <h1>Destination</h1>
                 </header>
                 <div className="flex flex-col-3 justify-between p-3">
-                    <div>
-                        <h1>Cikarang</h1>
-                        <p>Lemah Abang Station</p>
+                    <div className="text-left">
+                        <h1 className="text-[#59597C] font-[700]">Cikarang</h1>
+                        <p className="pt-2 text-[#88879C] font-400">Lemah Abang Station</p>
                     </div>
                     <button>
                         <IoMdSwap />
                     </button>
-                    <div>
-                        <h1>Cikarang</h1>
-                        <p>Lemah Abang Station</p>
+                    <div className="text-right">
+                        <h1 className="text-[#59597C] font-[700]">Jakarta</h1>
+                        <p className="pt-2 text-[#88879C] font-400">Lemah Abang Station</p>
                     </div>
                 </div>
                 <Separator />
-                <div>
+                <div className="p-3">
                     <h1 className="text-left">Departure Date</h1>
                     <div className="flex flex-col-2 justify-between items-center">
                         <h1>Tuesday, 2 April 2024</h1>
@@ -44,7 +44,7 @@ function TrainCard() {
                         </div>
                     </div>
                 </div>
-                <div className="grid grid-cols-2">
+                <div className="grid grid-cols-2 p-3">
                     <div>
                         <h1>Number of passenger</h1>
                         <div>
@@ -58,7 +58,7 @@ function TrainCard() {
                                     type="button"
                                     className="size-10 leading-10 text-gray-600 transition hover:opacity-75"
                                 >
-                                    &minus;
+                                    -
                                 </button>
 
                                 <input
@@ -72,16 +72,16 @@ function TrainCard() {
                                     type="button"
                                     className="size-10 leading-10 text-gray-600 transition hover:opacity-75"
                                 >
-                                    &plus;
+                                    +
                                 </button>
                             </div>
                         </div>
                     </div>
                     <button
                         type="button"
-                        className="px-8 py-3 font-semibold rounded dark:bg-gray-800 dark:text-gray-100"
+                        className="w-[20px] py-3 font-semibold rounded dark:bg-gray-800 dark:text-gray-100"
                     >
-                        Basic
+                        Find Ticket
                     </button>
                 </div>
             </article>

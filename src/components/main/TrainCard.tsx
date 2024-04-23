@@ -22,7 +22,7 @@ function TrainCard() {
                         <p className="pt-2 text-[#88879C] font-400">Lemah Abang Station</p>
                     </div>
                 </div>
-                <Separator />
+                <Separator className="border-[#F2F2F2]"/>
                 <div className="p-3">
                     <h1 className="text-left">Departure Date</h1>
                     <div className="flex flex-col-2 justify-between items-center">
@@ -77,12 +77,14 @@ function TrainCard() {
                             </div>
                         </div>
                     </div>
-                    <button
-                        type="button"
-                        className="w-[20px] py-3 font-semibold rounded dark:bg-gray-800 dark:text-gray-100"
-                    >
-                        Find Ticket
-                    </button>
+                    <div className="flex justify-end">
+                        <button
+                            type="button"
+                            className="w-3/4 font-semibold rounded-2xl text-white bg-[#2596D7]"
+                        >
+                            Find Ticket
+                        </button>
+                    </div>
                 </div>
             </article>
         </section>

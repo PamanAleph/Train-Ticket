@@ -1,14 +1,15 @@
 "use client";
 import * as React from "react";
 import { useState, useEffect } from "react";
-import CardTrain from "@/components/main/CardTrain";
-import Greetings from "@/components/main/Greetings";
-import Input from "@/components/main/Input";
 import TrainCard from "@/components/main/TrainCard";
 import TrainIcons from "@/components/main/TrainIcons";
 import Image from "next/image";
 import axios from "axios";
 import { TrainTicket } from "../../../common.type";
+import CardTrain from "@/components/main/CardTrain";
+import Greetings from "@/components/main/Greetings";
+import Input from "@/components/main/Input";
+
 export default function Home() {
   const [tickets, setTickets] = useState<TrainTicket[]>([]);
   useEffect(() => {
@@ -26,7 +27,6 @@ export default function Home() {
       <div className="text-center">
         <Greetings />
         <Input type="text" placeholder="test" />
-
         <div className="py-2">
           {tickets.map((ticket) => (
             <div key={ticket.TicketId} className="mb-4">

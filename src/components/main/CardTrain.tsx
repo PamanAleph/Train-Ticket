@@ -22,16 +22,14 @@ function CardTrain({
   trainClass,
 }: CardTrainProps) {
   return (
-    <div className="border rounded-xl">
-      <div className="flex justify-between p-3">
-        <h1 className="text-xl font-medium text-blue-500">{title}</h1>
+    <div className="border border-violet-400 rounded-xl mb-2">
+      <div className="flex justify-between p-3 border-b border-dashed rounded-t-xl bg-gradient-to-r from-blue-600 to-violet-600">
+        <h1 className="text-xl font-medium text-white">{title}</h1>
         <div>
-          <h1 className="text-base text-gray-500">Price</h1>
-          <h2 className="text">Rp{price.toFixed(3)}/pax</h2>
+          <h1 className="text-base text-white">Price</h1>
+          <h2 className="text-white px-3 py-1 rounded bg-violet-900">Rp{price.toFixed(3)}/pax</h2>
         </div>
       </div>
-
-      <Separator className="border-dashed border-gray-500"/>
       <div>
         <div className="w-full max-w-md">
           <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 p-4 sm:p-6">

@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./_components/Button";
+import Link from "next/link";
 
 function page() {
   return (
@@ -28,7 +29,7 @@ function page() {
                   gradientUnits="userSpaceOnUse"
                 >
                   <stop stop-color="#2596D7" />
-                  <stop offset="1" stop-color="white" />
+                  <stop offset="1" stopColor="white" />
                 </linearGradient>
               </defs>
             </svg>
@@ -76,6 +77,14 @@ function page() {
         <div className="flex justify-center pt-6 pb-4">
           <Button />
         </div>
+      </div>
+      <div className="flex justify-center pt-[5.4rem]">
+        <Link href="/">
+        
+        <button className="w-[300px] h-11 bg-gradient-to-tl from-sky-500 to-white rounded-[20px] text-center text-white text-sm font-bold leading-[10px] tracking-widest">
+         Back to Home
+        </button>
+        </Link>
       </div>
     </section>
   );

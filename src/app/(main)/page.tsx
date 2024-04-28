@@ -9,7 +9,7 @@ export default function Home() {
         <Greetings />
         <Input type="text" placeholder="test" />
 
-        <div className="py-2 ">
+        <div className="m-2 ">
           <CardTrain
             title="Express Class"
             price={239}

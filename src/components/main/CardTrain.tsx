@@ -3,6 +3,7 @@ import { FaArrowRightArrowLeft, FaTrainSubway } from "react-icons/fa6";
 import Separator from "../ui/Separator";
 
 interface CardTrainProps {
+  userId?: number;
   title: string;
   price: number;
   departureTime: string;
@@ -13,6 +14,7 @@ interface CardTrainProps {
 }
 
 function CardTrain({
+  userId,
   title,
   price,
   departureTime,
@@ -21,13 +23,30 @@ function CardTrain({
   arrivalCity,
   trainClass,
 }: CardTrainProps) {
+  const handleBookTrain = () => {
+    if (userId) {
+      // Proceed to booking
+      window.location.href = `/order/${title}`;
+    } else {
+      // Ask for confirmation before redirecting to sign-in page
+      const confirmSignIn = window.confirm(
+        "Please sign in to book this train. Do you want to proceed to sign-in?"
+      );
+      if (confirmSignIn) {
+        window.location.href = `/auth/signin`;
+      }
+    }
+  };
+
   return (
     <div className="border border-violet-400 rounded-xl mb-2">
       <div className="flex justify-between p-3 border-b border-dashed rounded-t-xl bg-gradient-to-r from-blue-600 to-violet-600">
         <h1 className="text-xl font-medium text-white">{title}</h1>
         <div>
           <h1 className="text-base text-white">Price</h1>
-          <h2 className="text-white px-3 py-1 rounded bg-violet-900">Rp{price.toFixed(3)}/pax</h2>
+          <h2 className="text-white px-3 py-1 rounded bg-violet-900">
+            Rp{price.toFixed(3)}/pax
+          </h2>
         </div>
       </div>
       <div>
@@ -59,11 +78,12 @@ function CardTrain({
             </div>
           </div>
           <div className="py-2">
-            <Link href="/available-seat">
-              <button className="border px-7 py-2 rounded-md bg-blue-500 text-white">
-                Book This Train
-              </button>
-            </Link>
+            <button
+              onClick={handleBookTrain}
+              className="border px-7 py-2 rounded-md bg-blue-500 text-white"
+            >
+              Book This Train
+            </button>
           </div>
         </div>
       </div>

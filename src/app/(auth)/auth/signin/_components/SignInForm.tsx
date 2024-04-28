@@ -5,7 +5,9 @@ import axios from "axios";
 import { access } from "fs";
 import { Metadata } from "next";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { toast } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata: Metadata = {
   title: "Sign In",
@@ -15,11 +17,17 @@ function SignInForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const data = await Login(email, password);
+      toast.success("Login Success", { autoClose: 1500 }); // Display toast for 2 seconds
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 2000);
     } catch (error: any) {
+      toast.error(`Login Failed: ${error}`, { autoClose: 1500 }); // Display error message received from the API
       setError(error);
     }
   };

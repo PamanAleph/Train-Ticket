@@ -1,5 +1,7 @@
 import React from "react";
 import SignInForm from "./_components/SignInForm";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function page() {
   return (
@@ -13,6 +15,7 @@ function page() {
         </div>
         <SignInForm />
       </div>
+        <ToastContainer/>
     </div>
   );
 }

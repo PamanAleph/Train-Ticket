@@ -6,7 +6,7 @@ import { access } from "fs";
 import { Metadata } from "next";
 import Link from "next/link";
 import React, { useState } from "react";
-import { toast } from "react-toastify"; 
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const metadata: Metadata = {
@@ -23,8 +23,17 @@ function SignInForm() {
     try {
       const data = await Login(email, password);
       toast.success("Login Success", { autoClose: 1500 }); // Display toast for 2 seconds
+      console.log(data);
+      const user = data.user;
+      const token = data.token;
+      console.log(user);
+      localStorage.setItem("secretkey", JSON.stringify(token));
       setTimeout(() => {
-        window.location.href = '/';
+        if (user.roleuser == 2) {
+          window.location.href = "/";
+        } else {
+          window.location.href = "http://localhost:3001/admin";
+        }
       }, 2000);
     } catch (error: any) {
       toast.error("Login Failed", { autoClose: 1500 }); // Display error message received from the API

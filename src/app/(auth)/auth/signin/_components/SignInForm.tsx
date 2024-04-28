@@ -27,7 +27,7 @@ function SignInForm() {
         window.location.href = '/';
       }, 2000);
     } catch (error: any) {
-      toast.error(`Login Failed: ${error}`, { autoClose: 1500 }); // Display error message received from the API
+      toast.error("Login Failed", { autoClose: 1500 }); // Display error message received from the API
       setError(error);
     }
   };
